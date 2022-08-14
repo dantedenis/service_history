@@ -5,11 +5,13 @@ import (
 	"database/sql"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
+	"google.golang.org/protobuf/types/known/timestamppb"
 	"log"
 	"service_history/internal/app/proto"
+	"time"
 )
 
-var query = "select deal_time, coast from history_deal where pair_id=(select id from currency_pair where pair=$1) and deal_time between $2 and $3"
+var query = "select deal_time, coast from history_deal where pair_id=(select id from currency_pair where pair=$1) and deal_time between $2 and $3 order by 1;"
 
 type HistoryServer struct {
 	conn *sql.DB
@@ -32,7 +34,9 @@ func (h HistoryServer) GetHistory(ctx context.Context, message *proto.RequestMes
 	var res []*proto.Pair
 	for rows.Next() {
 		var temp proto.Pair
-		err = rows.Scan(&temp.Time, &temp.Value)
+		var tempTime time.Time
+		err = rows.Scan(&tempTime, &temp.Value)
+		temp.Time = timestamppb.New(tempTime)
 		if err != nil {
 			return nil, status.New(codes.Canceled, "error scan rows from exec").Err()
 		}
