@@ -1,0 +1,29 @@
+{
+	"info": {
+		"_postman_id": "4fc5bc5d-2542-4205-8763-ee4783b42227",
+		"name": "history_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22591041"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8081/health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
