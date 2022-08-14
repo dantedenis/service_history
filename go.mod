@@ -1,0 +1,26 @@
+module service_history
+
+go 1.19
+
+require (
+	github.com/andybalholm/brotli v1.0.4 // indirect
+	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/fasthttp/router v1.4.11 // indirect
+	github.com/golang/mock v1.6.0 // indirect
+	github.com/golang/protobuf v1.5.2 // indirect
+	github.com/joho/godotenv v1.4.0 // indirect
+	github.com/klauspost/compress v1.15.0 // indirect
+	github.com/lib/pq v1.10.6 // indirect
+	github.com/pmezard/go-difflib v1.0.0 // indirect
+	github.com/savsgio/gotils v0.0.0-20220530130905-52f3993e8d6d // indirect
+	github.com/stretchr/testify v1.8.0 // indirect
+	github.com/valyala/bytebufferpool v1.0.0 // indirect
+	github.com/valyala/fasthttp v1.38.0 // indirect
+	golang.org/x/net v0.0.0-20220225172249-27dd8689420f // indirect
+	golang.org/x/sys v0.0.0-20220227234510-4e6760a101f9 // indirect
+	golang.org/x/text v0.3.7 // indirect
+	google.golang.org/genproto v0.0.0-20200526211855-cb27e3aa2013 // indirect
+	google.golang.org/grpc v1.48.0 // indirect
+	google.golang.org/protobuf v1.28.1 // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
+)

@@ -1,0 +1,13 @@
+{
+  "sql": {
+    "port": "5432",
+    "database": "test_db",
+    "max_idle_cons": 10,
+    "max_open_cons": 10,
+    "conn_max_lifetime": 100
+  },
+  "server": {
+    "host": "",
+    "port": ":80"
+  }
+}

@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  history_service:
+    container_name: history_service
+    build:
+      context: .
+      dockerfile: ./docker/history.Dockerfile
+    ports:
+      - "8888:8000"
+      - "8081:80"
+    depends_on:
+      - db
+    env_file:
+      - ".env"
+    links:
+      - db
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_PASSWORD: 123
+      POSTGRES_USER: test
+      POSTGRES_DB: test_db
+    volumes:
+      - './pkg/schema.sql:/docker-entrypoint-initdb.d/init.sql'
+    ports:
+      - "5432:5432"
+
+networks:
+  default:
+    name: "connect-service"
+    external: true
+
+volumes:
+  db:
+    driver: local
